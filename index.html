@@ -28,12 +28,14 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
+    /* Glow Effects */
     .glow-cyan { box-shadow: 0 0 20px rgba(6, 182, 212, 0.4); }
     .glow-green { box-shadow: 0 0 15px rgba(34, 197, 94, 0.35); }
     .glow-pink { box-shadow: 0 0 15px rgba(236, 72, 153, 0.35); }
     .glow-amber { box-shadow: 0 0 15px rgba(245, 158, 11, 0.35); }
     .glow-purple { box-shadow: 0 0 15px rgba(168, 85, 247, 0.35); }
 
+    /* SVG Connecting Paths */
     .tree-path {
       fill: none;
       stroke-width: 2.5;
@@ -41,11 +43,36 @@
       stroke-linejoin: round;
     }
 
+    /* Node initial animation state */
     .anim-node {
       opacity: 0;
       transform: scale(0.85);
     }
 
+    /* Clickable Topic Badge Style */
+    .topic-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      background-color: #1e293b;
+      color: #cbd5e1;
+      border: 1px solid #334155;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .topic-pill:hover {
+      background-color: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Floating badge */
     .floating-badge {
       position: fixed;
       bottom: 20px;
@@ -74,7 +101,7 @@
       Network Engineer Roadmap
     </h1>
     <p class="text-gray-400 text-sm md:text-base mt-2">
-      Step-by-step interactive visual path from fundamentals to enterprise architectures.
+      Click on any topic tag to watch the best free YouTube lecture directly!
     </p>
   </header>
 
@@ -92,6 +119,7 @@
   <!-- Main Roadmap Container -->
   <div class="relative w-full max-w-[950px] min-h-[920px] bg-slate-950/60 border border-slate-800/80 rounded-2xl p-6 md:p-10 shadow-2xl overflow-x-auto">
     
+    <!-- SVG Connector Paths -->
     <svg id="treeSvg" class="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
       <path id="path-root-1" class="tree-path" stroke="#22c55e" d="M 220 460 C 270 460, 270 90, 320 90" />
       <path id="path-root-2" class="tree-path" stroke="#ec4899" d="M 220 460 C 270 460, 270 240, 320 240" />
@@ -117,10 +145,10 @@
         <span class="font-bold text-sm text-green-300">Networking Fundamentals</span>
       </div>
       <div class="flex flex-wrap gap-1.5 ml-4 max-w-sm">
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">OSI Model</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">TCP/IP</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">IP Addressing & Subnetting</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">VLANs & Routing</span>
+        <a href="https://www.youtube.com/results?search_query=OSI+Model+explained" target="_blank" class="topic-pill">▶ OSI Model</a>
+        <a href="https://www.youtube.com/results?search_query=TCP+IP+model+networking+explained" target="_blank" class="topic-pill">▶ TCP/IP</a>
+        <a href="https://www.youtube.com/results?search_query=IP+Addressing+and+Subnetting+tutorial" target="_blank" class="topic-pill">▶ Subnetting</a>
+        <a href="https://www.youtube.com/results?search_query=VLAN+and+Routing+basics+networking" target="_blank" class="topic-pill">▶ VLANs & Routing</a>
       </div>
     </div>
 
@@ -131,10 +159,10 @@
         <span class="font-bold text-sm text-pink-300">Tools & Lab Practice</span>
       </div>
       <div class="flex flex-wrap gap-1.5 ml-4 max-w-sm">
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Cisco Packet Tracer</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">GNS3 / EVE-NG</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Wireshark</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Ping & Traceroute</span>
+        <a href="https://www.youtube.com/results?search_query=Cisco+Packet+Tracer+tutorial+for+beginners" target="_blank" class="topic-pill">▶ Cisco Packet Tracer</a>
+        <a href="https://www.youtube.com/results?search_query=GNS3+and+EVE-NG+networking+lab" target="_blank" class="topic-pill">▶ GNS3 / EVE-NG</a>
+        <a href="https://www.youtube.com/results?search_query=Wireshark+tutorial+for+beginners" target="_blank" class="topic-pill">▶ Wireshark</a>
+        <a href="https://www.youtube.com/results?search_query=Ping+and+Traceroute+networking+commands" target="_blank" class="topic-pill">▶ Ping & Traceroute</a>
       </div>
     </div>
 
@@ -145,9 +173,9 @@
         <span class="font-bold text-sm text-amber-300">Operating Systems & Linux</span>
       </div>
       <div class="flex flex-wrap gap-1.5 ml-4 max-w-sm">
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Linux Basics & CLI</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Bash / Shell Scripting</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">SSH & System Services</span>
+        <a href="https://www.youtube.com/results?search_query=Linux+for+Network+Engineers+course" target="_blank" class="topic-pill">▶ Linux Basics & CLI</a>
+        <a href="https://www.youtube.com/results?search_query=Bash+Shell+Scripting+tutorial" target="_blank" class="topic-pill">▶ Bash Scripting</a>
+        <a href="https://www.youtube.com/results?search_query=SSH+and+System+Services+Linux+tutorial" target="_blank" class="topic-pill">▶ SSH & Services</a>
       </div>
     </div>
 
@@ -158,9 +186,9 @@
         <span class="font-bold text-sm text-cyan-300">Design & Troubleshooting</span>
       </div>
       <div class="flex flex-wrap gap-1.5 ml-4 max-w-sm">
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Spine-Leaf & Topologies</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Syslog & Monitoring</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Performance Tuning</span>
+        <a href="https://www.youtube.com/results?search_query=Network+Topologies+Spine+Leaf+explained" target="_blank" class="topic-pill">▶ Spine-Leaf Topology</a>
+        <a href="https://www.youtube.com/results?search_query=Syslog+and+Network+Monitoring+tutorial" target="_blank" class="topic-pill">▶ Syslog & Monitoring</a>
+        <a href="https://www.youtube.com/results?search_query=Network+Troubleshooting+methodology" target="_blank" class="topic-pill">▶ Troubleshooting</a>
       </div>
     </div>
 
@@ -171,9 +199,9 @@
         <span class="font-bold text-sm text-purple-300">Advanced Topics</span>
       </div>
       <div class="flex flex-wrap gap-1.5 ml-4 max-w-sm">
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">BGP & EIGRP</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">MPLS & SD-WAN</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Cloud VPC & QoS</span>
+        <a href="https://www.youtube.com/results?search_query=BGP+Routing+Protocol+explained" target="_blank" class="topic-pill">▶ BGP & EIGRP</a>
+        <a href="https://www.youtube.com/results?search_query=MPLS+and+SD-WAN+explained" target="_blank" class="topic-pill">▶ MPLS & SD-WAN</a>
+        <a href="https://www.youtube.com/results?search_query=Cloud+VPC+Networking+AWS+Azure" target="_blank" class="topic-pill">▶ Cloud VPC & QoS</a>
       </div>
     </div>
 
@@ -184,9 +212,9 @@
         <span class="font-bold text-sm text-blue-300">Career & Growth</span>
       </div>
       <div class="flex flex-wrap gap-1.5 ml-4 max-w-sm">
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">CCNA &rarr; CCNP</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Hands-on Labs</span>
-        <span class="px-2 py-0.5 rounded bg-slate-800 text-slate-300 text-xs border border-slate-700">Build Your Portfolio</span>
+        <a href="https://www.youtube.com/results?search_query=CCNA+full+course+free" target="_blank" class="topic-pill">▶ CCNA 200-301 Course</a>
+        <a href="https://www.youtube.com/results?search_query=Network+Engineer+resume+and+portfolio" target="_blank" class="topic-pill">▶ Portfolio & Projects</a>
+        <a href="https://www.youtube.com/results?search_query=CCNP+Enterprise+overview" target="_blank" class="topic-pill">▶ CCNP Roadmap</a>
       </div>
     </div>
 
