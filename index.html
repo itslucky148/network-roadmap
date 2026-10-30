@@ -31,38 +31,64 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px 16px 80px;
+      padding: 16px 12px 80px;
+    }
+
+    /* Full VIP Horizontal Scrollable Navigation */
+    .nav-container {
+      width: 100%;
+      max-width: 900px;
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 6px 4px 12px;
+      margin-bottom: 20px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(56, 189, 248, 0.3) transparent;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-container::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .nav-container::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.3);
+      border-radius: 4px;
     }
 
     .nav-switcher {
-      display: flex;
-      gap: 10px;
+      display: inline-flex;
+      gap: 8px;
       background: rgba(15, 23, 42, 0.85);
       border: 1px solid var(--border);
-      padding: 6px 12px;
+      padding: 6px 10px;
       border-radius: 30px;
-      margin-bottom: 25px;
       backdrop-filter: blur(10px);
     }
 
     .nav-btn {
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.76rem;
       font-weight: 600;
-      padding: 7px 16px;
+      padding: 6px 14px;
       border-radius: 20px;
       transition: all 0.25s ease;
       color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
     }
 
     .nav-btn.active {
       background: var(--accent);
       color: #030712;
-      box-shadow: 0 0 16px var(--accent-glow);
+      box-shadow: 0 0 14px var(--accent-glow);
     }
 
     .nav-btn:hover:not(.active) {
       color: #fff;
+      background: rgba(255, 255, 255, 0.05);
     }
 
     .badge {
@@ -456,10 +482,25 @@
 </head>
 <body>
 
-  <nav class="nav-switcher">
-    <a href="#" class="nav-btn active">🌐 Network Engineer</a>
-    <a href="https://itslucky148.github.io/software-roadmap/" class="nav-btn">💻 Software Engineer</a>
-  </nav>
+  <!-- Full Interactive Roadmap Switcher Menu -->
+  <div class="nav-container">
+    <nav class="nav-switcher">
+      <a href="https://itslucky148.github.io/software/" class="nav-btn">💻 Software</a>
+      <a href="#" class="nav-btn active">🌐 Network</a>
+      <a href="https://itslucky148.github.io/cybe/" class="nav-btn">🛡️ Cybersecurity</a>
+      <a href="https://itslucky148.github.io/devc/" class="nav-btn">⚡ DevOps & Cloud</a>
+      <a href="https://itslucky148.github.io/ai-m/" class="nav-btn">🤖 AI & ML</a>
+      <a href="https://itslucky148.github.io/data/" class="nav-btn">📊 Data Science</a>
+      <a href="https://itslucky148.github.io/fulls/" class="nav-btn">🌐 Full Stack</a>
+      <a href="https://itslucky148.github.io/mob/" class="nav-btn">📱 Mobile Dev</a>
+      <a href="https://itslucky148.github.io/gam/" class="nav-btn">🎮 Game Dev</a>
+      <a href="https://itslucky148.github.io/bloc/" class="nav-btn">⛓️ Web3 & Blockchain</a>
+      <a href="https://itslucky148.github.io/emb/" class="nav-btn">🔌 Embedded & IoT</a>
+      <a href="https://itslucky148.github.io/sre/" class="nav-btn">🚨 SRE & Systems</a>
+      <a href="https://itslucky148.github.io/data/" class="nav-btn">🗄️ Data Engineer</a>
+      <a href="https://itslucky148.github.io/mlop/" class="nav-btn">🚀 MLOps & LLMOps</a>
+    </nav>
+  </div>
 
   <div class="badge">CAREER GUIDE 2026</div>
   <h1>NETWORK ENGINEER<br>ROADMAP</h1>
@@ -580,12 +621,13 @@
     </div>
   </div>
 
-  <!-- Recommended Books -->
+  <!-- Recommended Books Section -->
   <div class="books-section">
     <div class="books-title"><span>📚</span> Recommended Networking Books</div>
     <div class="books-subtitle">Industry-standard reference books to master networking infrastructure.</div>
     <div class="books-grid">
       
+      <!-- Book 1 -->
       <div class="book-card">
         <div>
           <div class="book-name">Computer Networks — Tanenbaum</div>
@@ -603,6 +645,7 @@
         </div>
       </div>
 
+      <!-- Book 2 -->
       <div class="book-card">
         <div>
           <div class="book-name">CCNA 200-301 Cert Guide</div>
@@ -620,6 +663,7 @@
         </div>
       </div>
 
+      <!-- Book 3 -->
       <div class="book-card">
         <div>
           <div class="book-name">Network Programmability & Automation</div>
@@ -644,7 +688,7 @@
   <div class="creator-container">
     <div class="creator-box">
       <div class="creator-subtitle">⚡ DEVELOPED & CREATED BY ⚡</div>
-      <div class="creator-name">LUCKY A.S</div>
+      <div class="creator-name">Lucky A.S</div>
       <a href="https://github.com/itslucky148" target="_blank" class="creator-link">
         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         github.com/itslucky148
@@ -747,4 +791,4 @@
     document.getElementById('showAllBtn').addEventListener('click', showAll);
   </script>
 </body>
-  </html>
+</html>
