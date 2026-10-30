@@ -34,39 +34,39 @@
       padding: 16px 12px 80px;
     }
 
-    /* Full VIP Horizontal Scrollable Navigation */
-    .nav-container {
+    /* All 19 Roadmaps Connected Scrollable Menu */
+    .roadmap-nav-wrapper {
       width: 100%;
-      max-width: 900px;
+      max-width: 950px;
       overflow-x: auto;
       white-space: nowrap;
-      padding: 6px 4px 12px;
+      padding: 6px 4px 14px;
       margin-bottom: 20px;
       scrollbar-width: thin;
-      scrollbar-color: rgba(56, 189, 248, 0.3) transparent;
+      scrollbar-color: rgba(56, 189, 248, 0.4) transparent;
       -webkit-overflow-scrolling: touch;
     }
 
-    .nav-container::-webkit-scrollbar {
+    .roadmap-nav-wrapper::-webkit-scrollbar {
       height: 4px;
     }
 
-    .nav-container::-webkit-scrollbar-thumb {
-      background: rgba(56, 189, 248, 0.3);
+    .roadmap-nav-wrapper::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.4);
       border-radius: 4px;
     }
 
-    .nav-switcher {
+    .roadmap-nav-bar {
       display: inline-flex;
       gap: 8px;
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.9);
       border: 1px solid var(--border);
       padding: 6px 10px;
       border-radius: 30px;
       backdrop-filter: blur(10px);
     }
 
-    .nav-btn {
+    .roadmap-nav-btn {
       text-decoration: none;
       font-size: 0.76rem;
       font-weight: 600;
@@ -76,19 +76,20 @@
       color: var(--text-muted);
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
       flex-shrink: 0;
     }
 
-    .nav-btn.active {
+    .roadmap-nav-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .roadmap-nav-btn.active {
       background: var(--accent);
       color: #030712;
       box-shadow: 0 0 14px var(--accent-glow);
-    }
-
-    .nav-btn:hover:not(.active) {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.05);
+      font-weight: 700;
     }
 
     .badge {
@@ -482,23 +483,28 @@
 </head>
 <body>
 
-  <!-- Full Interactive Roadmap Switcher Menu -->
-  <div class="nav-container">
-    <nav class="nav-switcher">
-      <a href="https://itslucky148.github.io/software/" class="nav-btn">💻 Software</a>
-      <a href="#" class="nav-btn active">🌐 Network</a>
-      <a href="https://itslucky148.github.io/cybe/" class="nav-btn">🛡️ Cybersecurity</a>
-      <a href="https://itslucky148.github.io/devc/" class="nav-btn">⚡ DevOps & Cloud</a>
-      <a href="https://itslucky148.github.io/ai-m/" class="nav-btn">🤖 AI & ML</a>
-      <a href="https://itslucky148.github.io/data/" class="nav-btn">📊 Data Science</a>
-      <a href="https://itslucky148.github.io/fulls/" class="nav-btn">🌐 Full Stack</a>
-      <a href="https://itslucky148.github.io/mob/" class="nav-btn">📱 Mobile Dev</a>
-      <a href="https://itslucky148.github.io/gam/" class="nav-btn">🎮 Game Dev</a>
-      <a href="https://itslucky148.github.io/bloc/" class="nav-btn">⛓️ Web3 & Blockchain</a>
-      <a href="https://itslucky148.github.io/emb/" class="nav-btn">🔌 Embedded & IoT</a>
-      <a href="https://itslucky148.github.io/sre/" class="nav-btn">🚨 SRE & Systems</a>
-      <a href="https://itslucky148.github.io/data/" class="nav-btn">🗄️ Data Engineer</a>
-      <a href="https://itslucky148.github.io/mlop/" class="nav-btn">🚀 MLOps & LLMOps</a>
+  <!-- Connected 19 Roadmaps Menu Bar -->
+  <div class="roadmap-nav-wrapper">
+    <nav class="roadmap-nav-bar">
+      <a href="https://itslucky148.github.io/soft" class="roadmap-nav-btn">💻 Software</a>
+      <a href="https://itslucky148.github.io/netv" class="roadmap-nav-btn active">🌐 Network</a>
+      <a href="https://itslucky148.github.io/cybe" class="roadmap-nav-btn">🛡️ Cybersecurity</a>
+      <a href="https://itslucky148.github.io/devc" class="roadmap-nav-btn">⚡ DevOps & Cloud</a>
+      <a href="https://itslucky148.github.io/ai-m" class="roadmap-nav-btn">🤖 AI & ML</a>
+      <a href="https://itslucky148.github.io/data" class="roadmap-nav-btn">📊 Data Science</a>
+      <a href="https://itslucky148.github.io/fulls" class="roadmap-nav-btn">🌍 Full Stack</a>
+      <a href="https://itslucky148.github.io/mob" class="roadmap-nav-btn">📱 Mobile Dev</a>
+      <a href="https://itslucky148.github.io/gam" class="roadmap-nav-btn">🎮 Game Dev</a>
+      <a href="https://itslucky148.github.io/bloc" class="roadmap-nav-btn">⛓️ Web3 & Blockchain</a>
+      <a href="https://itslucky148.github.io/emb" class="roadmap-nav-btn">🔌 Embedded & IoT</a>
+      <a href="https://itslucky148.github.io/sre" class="roadmap-nav-btn">🚨 SRE & Systems</a>
+      <a href="https://itslucky148.github.io/data-eng" class="roadmap-nav-btn">🗄️ Data Engineer</a>
+      <a href="https://itslucky148.github.io/mlop" class="roadmap-nav-btn">🚀 MLOps & LLMOps</a>
+      <a href="https://itslucky148.github.io/front" class="roadmap-nav-btn">🎨 Frontend</a>
+      <a href="https://itslucky148.github.io/back" class="roadmap-nav-btn">⚙️ Backend</a>
+      <a href="https://itslucky148.github.io/pyth" class="roadmap-nav-btn">🐍 Python</a>
+      <a href="https://itslucky148.github.io/clou" class="roadmap-nav-btn">☁️ Cloud Arch</a>
+      <a href="https://itslucky148.github.io/syst" class="roadmap-nav-btn">💻 System C/C++</a>
     </nav>
   </div>
 
